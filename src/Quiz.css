@@ -1,0 +1,100 @@
+/* Quiz */
+.form {
+  text-align: center;
+  margin: auto;
+}
+
+.form-questions-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.quiz-content {
+  margin-bottom: 0.2rem;
+}
+
+.quiz-content > input[type="radio"] {
+  margin: 1rem;
+  cursor: pointer;
+}
+
+.form-questions-wrapper > ol {
+  margin: 1rem auto;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.form-questions-wrapper > ol > li {
+  text-align: left;
+  padding-left: 0.5rem;
+}
+
+.form-submit-quiz {
+  margin: auto;
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-btn {
+  margin: auto 0.8rem;
+}
+
+#quiz-results {
+  margin: auto;
+  padding: 2rem;
+}
+/* Quiz */
+.form {
+  text-align: center;
+  margin: auto;
+}
+
+.form-questions-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.quiz-content {
+  margin-bottom: 0.2rem;
+}
+
+.quiz-content > input[type="radio"] {
+  margin: 1rem;
+  cursor: pointer;
+}
+
+.form-questions-wrapper > ol {
+  margin: 1rem auto;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.form-questions-wrapper > ol > li {
+  text-align: left;
+  padding-left: 0.5rem;
+}
+
+.form-submit-quiz {
+  margin: auto;
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-btn {
+  margin: auto 0.8rem;
+}
+
+#quiz-results {
+  margin: auto;
+  padding: 2rem;
+}

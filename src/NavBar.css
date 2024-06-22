@@ -1,0 +1,85 @@
+/* Top Navigation Bar */
+.top-header {
+  background-color: var(--indigo-dye);
+  padding: 0 2.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.logo-container > a > img {
+  padding-top: 0.5rem;
+  width: 250px;
+}
+
+.nav-links {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2rem 0 0;
+}
+
+.nav-links li {
+  font-size: 1.2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  margin: 0 1rem;
+  color: var(--snow);
+}
+
+.nav-links a:hover {
+  border-bottom: 3px solid var(--almond);
+  color: var(--cinereous-ashy-grey);
+  padding: 0.5rem;
+}
+
+/* Bottom Navigation */
+.bottom-header {
+  margin: 0;
+}
+
+.navbar-bottom {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  height: 90px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  background-color: var(--indigo-dye);
+  display: flex;
+  overflow-x: auto;
+  z-index: 2;
+}
+
+.nav-links-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  min-width: 50px;
+  overflow: hidden;
+  font-size: 13px;
+  color: var(--snow);
+  text-decoration: none;
+}
+
+.nav-links-bottom:hover {
+  color: var(--almond);
+}
+
+.nav-links-bottom .svg-inline--fa {
+  font-size: 16px;
+  margin-bottom: 0.2rem;
+}
+
+.nav-links-bottom i:active {
+  background-color: var(--cinereous-ashy-grey);
+}
+
+.nav-text {
+  font-size: 11px;
+  padding: 3px;
+}

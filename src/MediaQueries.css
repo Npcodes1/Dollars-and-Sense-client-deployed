@@ -1,0 +1,213 @@
+/* Media Queries */
+
+/* Phone */
+@media screen and (max-width: 480px) {
+  /* Header */
+  .top-header {
+    flex-direction: column;
+  }
+
+  /* Top Navigation Bar */
+  .nav-links {
+    display: none;
+  }
+
+  /* Quiz */
+  .h4-title {
+    color: var(--cinereous-ashy-grey);
+    text-align: center;
+  }
+
+  .form-questions-wrapper > ol {
+    max-width: 85%;
+    padding: 0.3rem;
+  }
+
+  .form-questions-wrapper > ol > li {
+    padding-left: 0.2rem;
+  }
+
+  .quiz-content > input[type="radio"] {
+    margin: 0.5rem;
+  }
+
+  /* Contact Form */
+  .form-details input {
+    flex-basis: 100px;
+  }
+
+  div.form-submit-quiz {
+    flex-direction: column;
+  }
+
+  button.form-btn.clear-btn.btn {
+    margin-top: 1.2rem;
+  }
+
+  /* Footer */
+  .copyright-wrapper {
+    display: block;
+    text-align: center;
+    font-size: 0.8rem;
+    width: 65%;
+  }
+
+  /* Back to Top button */
+
+  /* Forgot Login */
+  .forgot-login-container {
+    text-align: center;
+    padding: 0 0 1rem 0;
+  }
+
+  /* Financial Tracker */
+  form.transactions-container,
+  select#category {
+    width: 100%;
+  }
+
+  div.transactions,
+  #category {
+    width: 100%;
+  }
+
+  .btn {
+    padding: 4px 8px;
+    font-size: 0.8em;
+  }
+
+  .history-list ul {
+    padding-left: 0;
+    overflow-y: auto;
+  }
+
+  .history-list li {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .history-list li div {
+    padding: 0;
+  }
+}
+
+/* IPad/Tablet */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  /* Header */
+  .top-header {
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  /* Top Navigation Bar */
+  .nav-links {
+    display: none;
+  }
+
+  /* Quiz */
+  .form-questions-wrapper > ol {
+    max-width: 60%;
+    padding: 0;
+    margin: auto;
+  }
+
+  .form-questions-wrapper > ol > li {
+    text-align: left;
+  }
+
+  /* Contact Form  */
+  .form-fields label {
+    text-align: right;
+  }
+
+  .form-submit .login {
+    margin: 1rem;
+  }
+
+  /* Financial Tracker */
+  .transactions-container {
+    max-width: 100%;
+  }
+
+  .table th,
+  .table td {
+    font-size: 0.9em;
+    padding: 6px 8px;
+  }
+
+  .btn {
+    padding: 4px 8px;
+    font-size: 0.8em;
+  }
+}
+
+/* Desktop */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  /* Header */
+  .top-header {
+    justify-content: space-evenly;
+  }
+
+  .logo-container > a > img {
+    width: 200px;
+  }
+
+  .nav-links {
+    padding-top: 0;
+    padding-bottom: 1rem;
+  }
+
+  /* Hiding bottom navigation bar when in laptop size. */
+  .bottom-header {
+    display: none;
+  }
+
+  /* Contact Form */
+  .form-details label {
+    text-align: right;
+  }
+
+  /* Quiz */
+  .form-questions-wrapper {
+    margin: auto;
+  }
+
+  /* Financial Tracker */
+  .transactions-container {
+    max-width: 100%;
+  }
+}
+
+/* Bigger than Desktop Screen */
+@media screen and (min-width: 1025px) {
+  /* Header */
+  .top-header {
+    justify-content: space-between;
+  }
+
+  /* Hiding bottom navigation bar when in laptop size. */
+  .bottom-header {
+    display: none;
+  }
+
+  /* Contact Form */
+  .form-details label {
+    text-align: right;
+  }
+
+  /* Financial Tracker */
+  .transactions-container {
+    max-width: 100%;
+  }
+
+  .input-container {
+    max-width: 50%;
+  }
+
+  /* Pie Chart Container */
+  .pie-container {
+    width: 50%;
+    height: 50%;
+  }
+}

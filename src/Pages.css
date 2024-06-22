@@ -1,0 +1,297 @@
+/* Demographics Pie Chart */
+.pie-container {
+  width: 60%;
+  height: 60%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 0;
+}
+
+/* Quiz */
+.form {
+  text-align: center;
+  margin: auto;
+}
+
+.form-questions-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.quiz-content {
+  margin-bottom: 0.2rem;
+}
+
+.quiz-content > input[type="radio"] {
+  margin: 1rem;
+  cursor: pointer;
+}
+
+.form-questions-wrapper > ol {
+  margin: 1rem auto;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.form-questions-wrapper > ol > li {
+  text-align: left;
+  padding-left: 0.5rem;
+}
+
+.form-submit-quiz {
+  margin: auto;
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-btn {
+  margin: auto 0.8rem;
+}
+
+#quiz-results {
+  margin: auto;
+  padding: 2rem;
+}
+
+/* Credit Score Page */
+.credit-score-container {
+  display: block;
+  text-align: center;
+}
+
+.credit-progress {
+  width: 12.5rem;
+  margin-bottom: 2rem;
+}
+
+.content-image-wrapper {
+  z-index: 1;
+  padding-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Financial Tracker Page */
+.budget-details {
+  text-align: center;
+  color: var(--caput-mortuum);
+}
+
+.left-colored-title {
+  text-align: left;
+  color: var(--indigo-dye);
+}
+
+.transactions-container {
+  width: 70%;
+  border-radius: 15px;
+  padding: 0 0 2rem;
+  font-size: 1.4rem;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.3rem;
+}
+
+.transactions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  color: var(--money-green);
+  font-weight: 600;
+}
+
+#selected-category {
+  border-radius: 8px;
+  margin: 0.6rem 0;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+}
+
+#category {
+  height: 40px;
+  width: 20rem;
+  border-radius: 0.5rem;
+}
+
+.transactions input,
+#note {
+  margin: 0.6rem;
+  border-radius: 0.5rem;
+  font-size: 1.5rem;
+}
+
+#selected-category option,
+.transactions input,
+#note::placeholder {
+  font-family: serif;
+}
+
+.input-container label {
+  margin-right: 1rem;
+}
+
+.done-btn {
+  padding: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+/*Expense List  */
+.h2-title {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+.btn {
+  padding: 6px 12px;
+  font-size: 0.9em;
+}
+
+.btn-edit {
+  background-color: var(--almond);
+  cursor: pointer;
+}
+
+.btn-delete {
+  background-color: var(--dark-red);
+  color: var(--snow);
+  border: none;
+  cursor: pointer;
+}
+
+.total-container {
+  font-weight: bold;
+  background-color: var(--snow);
+}
+
+/* History Section on Tracker Page */
+.history-title {
+  color: var(--caput-mortuum);
+}
+
+.history-list {
+  padding-left: 0;
+  width: 100%;
+}
+
+.history-list li {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0.5rem;
+  border-bottom: 2px solid var(--cinereous-ashy-grey);
+}
+
+.history-list li span {
+  font-weight: 700;
+}
+
+.history-list li div {
+  padding: 0 2rem;
+}
+
+/* Forgot Login Page */
+.form-link {
+  display: block;
+  text-align: center;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-link span,
+.form-link span a {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.form-link a {
+  text-decoration: none;
+}
+
+/* Resources Page */
+.resource-link {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.resource-link a:link {
+  color: var(--indigo-dye);
+}
+
+.resource-link a:visited {
+  color: var(--indigo-dye);
+}
+
+.resource-link a:hover {
+  color: var(--money-green);
+}
+
+.resource-link a:active {
+  color: var(--caput-mortuum);
+}
+
+.h2-centered {
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+/* Page Not Found */
+.page-error {
+  text-align: center;
+}
+
+.page-error-img {
+  width: 100%;
+}
+
+.page-error-btn {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+/* Admin */
+.table {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid var(--black);
+  overflow-x: auto;
+}
+
+.table-heading th {
+  flex: 1;
+  padding: 0.5rem;
+  text-decoration: underline;
+}
+
+tr:nth-child(even) {
+  background-color: var(--light-gray);
+}
+
+.table-row td {
+  flex: 1;
+  padding: 0.5rem;
+}
+
+.admin {
+  text-align: center;
+  color: var(--indigo-dye);
+  margin-top: 0.5rem;
+}
+
+.admin a:visited {
+  color: inherit;
+}
