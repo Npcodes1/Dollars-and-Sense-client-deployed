@@ -1,7 +1,7 @@
 import React from "react";
 import "../Pages.css";
 import "../MediaQueries.css";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { GoogleLogin } from "@react-oauth/google";
 
 const url = "https://dollars-and-sense-app.onrender.com";
@@ -136,9 +136,9 @@ const Login = ({ user, setUser, googleClientId }) => {
                 />
               </div>
 
-              <div className="admin">
+              {/* <div className="admin">
                 <Link to="/admin">ADMIN</Link>
-              </div>
+              </div> */}
 
               {/* Submit Button */}
               <div className="form-submit">
