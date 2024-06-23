@@ -269,10 +269,21 @@
   flex-direction: column;
   border: 2px solid var(--black);
   overflow-x: auto;
+  width: 100%;
+}
+
+.table-heading tr {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+.table-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .table-heading th {
-  flex: 1;
   padding: 0.5rem;
   text-decoration: underline;
 }

@@ -24,34 +24,35 @@ const Login = ({ user, setUser }) => {
     //prevent default refreshing
     e.preventDefault();
 
-    //print success message
-    console.log("The form is working!");
-
     //use body variable to hold data that's submitted
-    const body = {
-      username: e.target.username.value,
-      password: e.target.password.value,
-    };
+    // const body = {
+    //   username: e.target.username.value,
+    //   password: e.target.password.value,
+    // };
 
     //print the value of each input using its name attribute
-    console.log(body.username);
-    console.log(body.password);
+    // console.log(body.username);
+    // console.log(body.password);
 
     //need to send/post the data to the backend
-    fetch(`${url}/api/login/local`, {
+    fetch(`${url}/api/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(body),
+      body: JSON.stringify(user),
     })
       .then((response) => response.json())
 
       .then((result) => {
-        console.log(result);
-        localStorage.setItem("user", JSON.stringify(result.data));
-        alert("You've successfully logged in!");
-        navigate("/admin");
+        if (result.statusCode === 200) {
+          localStorage.setItem("user", JSON.stringify(result.data));
+          console.log(result.data);
+          alert("You've successfully logged in!");
+          navigate("/admin");
+        } else {
+          throw new Error(result.error.message);
+        }
       })
       .catch((error) => {
         navigate("/");
@@ -108,23 +109,25 @@ const Login = ({ user, setUser }) => {
             <div className="form-fields">
               {/* Username */}
               <div className="form-details">
-                <label htmlFor="username">Username:</label>
+                <label htmlFor="loginUsername">Username:</label>
                 <input
                   type="text"
-                  name="username"
-                  id="username"
+                  name="loginUsername"
+                  id="loginUsername"
                   placeholder="Username"
+                  onChange={(e) => e.target.value}
                   required
                 />
               </div>
 
               {/* Password */}
               <div className="form-details">
-                <label htmlFor="password">Password:</label>
+                <label htmlFor="loginPassword">Password:</label>
                 <input
                   type="password"
-                  name="password"
-                  id="password"
+                  name="loginPassword"
+                  id="loginPassword"
+                  onChange={(e) => e.target.value}
                   placeholder="Password"
                   required
                 />

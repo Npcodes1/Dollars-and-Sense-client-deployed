@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "../Pages.css";
 import "../MediaQueries.css";
-import { useNavigate } from "react-router-dom";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 
 const url = "http://localhost:8080";
 
 const Admin = () => {
   const navigate = useNavigate();
-  // const { userId, messageId } = useParams();
 
   // to hold data for users. Initial state is an empty array
   const [getUsers, setGetUsers] = useState([{}]);
@@ -28,10 +27,9 @@ const Admin = () => {
       .then((result) => {
         console.log(result); //print converted result to console
         setGetUsers(result.data);
-        navigate("/admin");
       })
       .catch((error) => console.log("Request failed", error));
-  }, [navigate]);
+  }, []);
 
   //useEffect to use setter function for users imported from messages data
   useEffect(() => {
@@ -44,30 +42,43 @@ const Admin = () => {
       .then((result) => {
         console.log(result); //print converted result to console
         setGetMessages(result.data);
-        navigate("/admin");
       })
       .catch((error) => console.log("Request failed", error));
-  }, [navigate]);
+  }, []);
 
   // //To delete User
-  // const handleDeleteUser = () => {
-  //   fetch(`${url}/auth/admin/users/delete/${userId}`, {
-  //     method: "DELETE",
-  //   })
-  //     .then((response) => response.json())
-  //     .then((result) => console.log(result))
-  //     .catch((error) => console.log(error));
-  // };
+  const handleDeleteUser = (_id) => {
+    fetch(`${url}/auth/admin/users/delete/${_id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => response.json())
+      .then((result) => {
+        console.log(result);
+        //to refresh page
+        navigate("/admin");
+      })
+      .catch((error) => console.log(error));
+  };
 
   // //To delete Message
-  // const handleDeleteMessage = () => {
-  //   fetch(`${url}/auth/messages/delete/${messageId}`, {
-  //     method: "DELETE",
-  //   })
-  //     .then((response) => response.json())
-  //     .then((result) => console.log(result))
-  //     .catch((error) => console.log(error));
-  // };
+  const handleDeleteMessage = (_id) => {
+    fetch(`${url}/auth/messages/delete/${_id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => response.json())
+      .then((result) => {
+        console.log(result);
+        //to refresh page
+        navigate("/admin");
+      })
+      .catch((error) => console.log(error));
+  };
 
   return (
     <>
@@ -81,36 +92,35 @@ const Admin = () => {
             <h2>Users</h2>
             <hr />
             <table className="table">
-              <div className="table-style">
-                <thead className="table-heading">
-                  <tr>
-                    <th>FIRST NAME</th>
-                    <th>LAST NAME</th>
-                    <th>EMAIL</th>
-                    <th>USERNAME</th>
-                  </tr>
-                </thead>
-                <tbody className="table-body">
-                  {getUsers.map((getUser) => {
-                    return (
-                      <tr className="table-row" key={getUser.id}>
-                        <td>{getUser.firstName}</td>
-                        <td>{getUser.lastName}</td>
-                        <td>{getUser.email}</td>
-                        <td>{getUser.username}</td>
-                        {/* <td>
+              <thead className="table-heading">
+                <tr>
+                  <th>FIRST NAME</th>
+                  <th>LAST NAME</th>
+                  <th>EMAIL</th>
+                  <th>USERNAME</th>
+                  <th>DELETE</th>
+                </tr>
+              </thead>
+              <tbody className="table-body">
+                {getUsers.map((getUser) => {
+                  return (
+                    <tr className="table-row" key={getUser._id}>
+                      <td>{getUser.firstName}</td>
+                      <td>{getUser.lastName}</td>
+                      <td>{getUser.email}</td>
+                      <td>{getUser.username}</td>
+                      <td>
                         <button
                           type="button"
-                          onClick={() => handleDeleteUser(userId)}
+                          onClick={() => handleDeleteUser(getUser._id)}
                         >
                           <FontAwesomeIcon icon={faTrashCan} />
                         </button>
-                      </td> */}
-                      </tr>
-                    );
-                  })}
-                </tbody>
-              </div>
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
             </table>
           </div>
         </section>
@@ -122,33 +132,35 @@ const Admin = () => {
             <h2>Messages</h2>
             <hr />
             <table className="table">
-              <div className="table-style">
-                <thead className="table-heading">
-                  <tr>
-                    <th>FIRST NAME</th>
-                    <th>LAST NAME</th>
-                    <th>EMAIL</th>
-                    <th>MESSAGE</th>
-                  </tr>
-                </thead>
-                <tbody className="table-body">
-                  {getMessages.map((getMessage) => {
-                    return (
-                      <tr className="table-row" key={getMessage.id}>
-                        <td>{getMessage.firstName}</td>
-                        <td>{getMessage.lastName}</td>
-                        <td>{getMessage.email}</td>
-                        <td>{getMessage.message}</td>
-                        {/* <td>
-                        <button onClick={handleDeleteMessage}>
+              <thead className="table-heading">
+                <tr>
+                  <th>FIRST NAME</th>
+                  <th>LAST NAME</th>
+                  <th>EMAIL</th>
+                  <th>MESSAGE</th>
+                  <th>DELETE</th>
+                </tr>
+              </thead>
+              <tbody className="table-body">
+                {getMessages.map((getMessage) => {
+                  return (
+                    <tr className="table-row" key={getMessage._id}>
+                      <td>{getMessage.firstName}</td>
+                      <td>{getMessage.lastName}</td>
+                      <td>{getMessage.email}</td>
+                      <td>{getMessage.message}</td>
+                      <td>
+                        <button
+                          type="button"
+                          onClick={() => handleDeleteMessage(getMessage._id)}
+                        >
                           <FontAwesomeIcon icon={faTrashCan} />
                         </button>
-                      </td> */}
-                      </tr>
-                    );
-                  })}
-                </tbody>
-              </div>
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
             </table>
           </div>
         </section>
