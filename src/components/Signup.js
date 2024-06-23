@@ -38,6 +38,7 @@ const Signup = ({ user, setUser }) => {
         console.log(result);
         setUser(user);
         localStorage.setItem("user", JSON.stringify(result.data));
+        alert("You've signed up! Welcome!");
         navigate("/");
       })
       .catch((error) => console.log(error));
@@ -60,6 +61,7 @@ const Signup = ({ user, setUser }) => {
                 type="text"
                 name="firstName"
                 id="firstName"
+                onChange={(e) => console.log(e.target.value)}
                 placeholder="First Name"
                 required
               />
@@ -71,6 +73,7 @@ const Signup = ({ user, setUser }) => {
                 type="text"
                 name="lastName"
                 id="lastName"
+                onChange={(e) => console.log(e.target.value)}
                 placeholder="Last Name"
                 required
               />
@@ -82,21 +85,12 @@ const Signup = ({ user, setUser }) => {
                 type="email"
                 name="email"
                 id="email"
+                onChange={(e) => console.log(e.target.value)}
                 placeholder="Email"
                 required
               />
             </div>
-            {/* Phone Number */}
-            {/* <div className="form-details">
-              <label htmlFor="phoneNumber">Phone Number:</label>
-              <input
-                type="number"
-                name="phoneNumber"
-                id="phoneNumber"
-                placeholder="Phone Number"
-                required
-              />
-            </div> */}
+
             {/* Username */}
             <div className="form-details">
               <label htmlFor="username">Username:</label>
@@ -104,6 +98,7 @@ const Signup = ({ user, setUser }) => {
                 type="text"
                 name="username"
                 id="username"
+                onChange={(e) => console.log(e.target.value)}
                 placeholder="Username"
                 required
               />
@@ -115,6 +110,7 @@ const Signup = ({ user, setUser }) => {
                 type="password"
                 name="password"
                 id="password"
+                onChange={(e) => console.log(e.target.value)}
                 placeholder="Password"
                 required
               />

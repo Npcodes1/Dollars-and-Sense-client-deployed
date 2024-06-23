@@ -1,24 +1,14 @@
-import React /*{ useEffect }*/ from "react";
+import React from "react";
 import "../Pages.css";
 import "../MediaQueries.css";
 import { useNavigate, Link } from "react-router-dom";
-// import { GoogleLogin } from "@react-oauth/google";
+import { GoogleLogin } from "@react-oauth/google";
 
 const url = "http://localhost:8080";
 
-// const googleClientId =
-//   "601439240620-5fflt465ga9qfd7rft1h1cavr4no815g.apps.googleusercontent.com";
-
-const Login = ({ user, setUser }) => {
+const Login = ({ user, setUser, googleClientId }) => {
   //To navigate to other pages
   const navigate = useNavigate();
-
-  // const responseMessage = (response) => {
-  //   console.log(response);
-  // };
-  // const errorMessage = (error) => {
-  //   console.log(error);
-  // };
 
   const handleLoginForm = (e) => {
     //prevent default refreshing
@@ -46,8 +36,8 @@ const Login = ({ user, setUser }) => {
 
       .then((result) => {
         if (result.statusCode === 200) {
-          localStorage.setItem("user", JSON.stringify(result.data));
-          console.log(result.data);
+          console.log(result);
+          localStorage.setItem("user", JSON.stringify(result));
           alert("You've successfully logged in!");
           navigate("/admin");
         } else {
@@ -60,23 +50,33 @@ const Login = ({ user, setUser }) => {
       });
   };
 
-  // // Google Authentication
+  // Google Auth
   // useEffect(() => {
   //   fetch(`${url}/api/auth/google`, {
   //     method: "GET",
   //     headers: {
-  //       // Authorization: `Bearer ${}`,
-  //       "Content-Type": "application/json",
+  //       "Content-type": "application/json",
   //     },
   //   })
   //     .then((response) => response.json())
   //     .then((result) => {
-  //       console.log(result);
-  //       navigate("/");
-  //       setUser(user);
+  //       if (result.statusCode === 200) {
+  //         console.log(result.data);
+  //         localStorage.setItem("user", JSON.stringify(result.data));
+  //         navigate("/");
+  //       } else {
+  //         throw new Error(result.error.message);
+  //       }
   //     })
   //     .catch((error) => console.log(error));
   // });
+
+  const responseMessage = (response) => {
+    console.log(response);
+  };
+  const errorMessage = (error) => {
+    console.log(error);
+  };
 
   // //Github Authentication
   // useEffect(() => {
@@ -89,9 +89,12 @@ const Login = ({ user, setUser }) => {
   //   })
   //     .then((response) => response.json())
   //     .then((result) => {
-  //       console.log(result);
-  //       navigate("/");
-  //       setUser(user);
+  //       if (result.statusCode === 200) {
+  //         console.log(result);
+  //         navigate("/");
+  //       } else {
+  //         throw new Error(result.error.message);
+  //       }
   //     })
   //     .catch((error) => console.log(error));
   // });
@@ -115,7 +118,7 @@ const Login = ({ user, setUser }) => {
                   name="loginUsername"
                   id="loginUsername"
                   placeholder="Username"
-                  onChange={(e) => e.target.value}
+                  onChange={(e) => console.log(e.target.value)}
                   required
                 />
               </div>
@@ -127,7 +130,7 @@ const Login = ({ user, setUser }) => {
                   type="password"
                   name="loginPassword"
                   id="loginPassword"
-                  onChange={(e) => e.target.value}
+                  onChange={(e) => console.log(e.target.value)}
                   placeholder="Password"
                   required
                 />
@@ -143,15 +146,17 @@ const Login = ({ user, setUser }) => {
                   Login
                 </button>
               </div>
-              {/* <GoogleLogin
+
+              <GoogleLogin
+                className="googleLogin"
                 clientId={googleClientId}
                 onSuccess={responseMessage}
                 onError={errorMessage}
               />
 
-              <button className="auth-btn" type="submit">
-                Login with GitHub
-              </button> */}
+              {/* <button type="button" onClick={handleGitHubAuth}>
+                Sign in with GitHub
+              </button>  */}
 
               {/* Forgot Username/Password */}
               {/* <div className="form-link">

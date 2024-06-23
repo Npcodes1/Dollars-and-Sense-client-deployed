@@ -73,7 +73,8 @@ const Admin = () => {
     })
       .then((response) => response.json())
       .then((result) => {
-        console.log(result);
+        console.log("User has been successfully deleted", result);
+        alert("User has been successfully deleted!");
         //to refresh page
         navigate("/admin");
       })
