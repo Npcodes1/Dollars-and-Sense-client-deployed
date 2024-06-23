@@ -5,7 +5,7 @@ import "../MediaQueries.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 
-const url = "http://localhost:8080";
+const url = "https://dollars-and-sense-app.onrender.com";
 
 const Admin = () => {
   const navigate = useNavigate();

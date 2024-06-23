@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../Pages.css";
 import "../MediaQueries.css";
 
-const url = "http://localhost:8080";
+const url = "https://dollars-and-sense-app.onrender.com";
 
 const FinancialTracker = () => {
   //To detect the changes in state

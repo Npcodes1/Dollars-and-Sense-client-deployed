@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import "../Pages.css";
 import "../MediaQueries.css";
 
-const url = "http://localhost:8080";
+const url = "https://dollars-and-sense-app.onrender.com";
 
 const PageNotFound = () => {
   const navigate = useNavigate();

@@ -3,7 +3,7 @@ import React from "react";
 import "../Pages.css";
 import "../MediaQueries.css";
 
-const url = "http://localhost:8080";
+const url = "https://dollars-and-sense-app.onrender.com";
 
 const Contact = () => {
   const handleContactForm = (e) => {

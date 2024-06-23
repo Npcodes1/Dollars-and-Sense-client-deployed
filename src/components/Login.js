@@ -4,7 +4,7 @@ import "../MediaQueries.css";
 import { useNavigate, Link } from "react-router-dom";
 import { GoogleLogin } from "@react-oauth/google";
 
-const url = "http://localhost:8080";
+const url = "https://dollars-and-sense-app.onrender.com";
 
 const Login = ({ user, setUser, googleClientId }) => {
   //To navigate to other pages

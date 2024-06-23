@@ -9,9 +9,10 @@ import {
   faBuildingColumns,
   faBook,
   faUser,
+  faDoorClosed,
 } from "@fortawesome/free-solid-svg-icons";
 
-const url = "http://localhost:8080";
+const url = "https://dollars-and-sense-app.onrender.com";
 
 function NavBar({ user, setUser }) {
   const navigate = useNavigate();
@@ -63,8 +64,8 @@ function NavBar({ user, setUser }) {
             <li>
               {user.username ? (
                 <>
-                  <Link to="/admin">ADMIN</Link>
-                  <Link to="" onClick={handleLogout}>
+                  <Link to="/logout" onClick={handleLogout}>
+                    <FontAwesomeIcon icon={faDoorClosed} />
                     LOGOUT
                   </Link>
                 </>

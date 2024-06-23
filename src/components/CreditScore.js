@@ -1,5 +1,4 @@
 import React from "react";
-
 import "../Pages.css";
 import "../MediaQueries.css";
 
